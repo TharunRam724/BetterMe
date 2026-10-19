@@ -21,23 +21,13 @@ A calm, premium, modern pastel web application designed for intentional living, 
 
 ---
 
-## 🔐 Supabase Integration & Security Model
-
-### 1. Environment Configuration (`.env`)
-The application reads the Supabase configuration from your root `.env` file:
-```env
-VITE_SUPABASE_URL=https://itxrxgubsvxhcjscjphy.supabase.co
-VITE_SUPABASE_ANON_KEY=sb_publishable_9pXSVRSVnMhEKj7jZLCOKA_euueBBEp
-```
-> **Security Note**: Only the public anon key is used. Never expose the service-role or secret key in client-side code.
-
-### 2. Real Persistent Authentication
+### 1. Real Persistent Authentication
 - **Sign In & Sign Up**: Fully wired to Supabase Auth (`supabase.auth.signInWithPassword` and `supabase.auth.signUp`).
 - **Protected Routes**: Private pages (Dashboard, Journal, Mood, Habits, Traits, Insights, Settings) require authentication. Unauthenticated visitors are presented with the calm pastel sign-in screen.
 - **Session Persistence**: Sessions are saved and auto-refreshed via `supabase.auth.onAuthStateChange`.
 - **Sign Out**: Clean logout removes the session and resets local state.
 
-### 3. Real Supabase `traits` Table Integration
+### 2. Real Supabase `traits` Table Integration
 The Character Traits module is connected to your remote Supabase `public.traits` table:
 - **Columns Mapped**:
   - `id`: Unique record identifier (UUID)
@@ -53,7 +43,7 @@ The Character Traits module is connected to your remote Supabase `public.traits`
 - **Honest Feedback**:
   - If a database operation fails (e.g. network disconnect or policy denial), a clear error alert is displayed. Fake successes are never shown.
 
-### 4. Privacy Commitments
+### 3. Privacy Commitments
 - **In-Memory Journaling**: In adherence to personal privacy guidelines, private journal reflections remain strictly in application session memory and are **never stored in unencrypted browser `localStorage`**.
 
 ---
