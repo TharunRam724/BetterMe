@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #FAF8F5;
+    color: #2D2A26;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Custom delicate scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E2DDD5;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CFC9BF;
+}
+
+/* Glass & delicate card utilities */
+.card-subtle {
+  background: #FFFFFF;
+  border: 1px solid #ECE7DF;
+  box-shadow: 0 1px 3px 0 rgba(40, 32, 20, 0.02), 0 1px 2px -1px rgba(40, 32, 20, 0.02);
+}
+
+.card-elevated {
+  background: #FFFFFF;
+  border: 1px solid #EAE4DC;
+  box-shadow: 0 4px 12px 0 rgba(40, 32, 20, 0.04), 0 2px 4px -2px rgba(40, 32, 20, 0.03);
+}
+
+.lavender-pill {
+  background-color: #F4F1FA;
+  color: #6C5B96;
+  border: 1px solid #E6DFF2;
+}
+
+.sage-pill {
+  background-color: #F1F6F3;
+  color: #486952;
+  border: 1px solid #D8E7DC;
+}
+
+.peach-pill {
+  background-color: #FDF4F0;
+  color: #B85D3B;
+  border: 1px solid #F5DDD4;
+}
